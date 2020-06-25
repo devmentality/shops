@@ -11,5 +11,5 @@ venv:
 	$(VENV)/bin/python -m pip install poetry
 	$(VENV)/bin/poetry install
 
-dev:
-	$(VENV)/bin/uvicorn shops.app:app --reload
+up:
+	uvicorn shops.app:app --host 0.0.0.0 --reload
