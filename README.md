@@ -9,4 +9,7 @@ https://docs.google.com/document/d/1hMs2vwf7a6wUFpkJYBuwQeLFGd4umd_HxJNUG7JgiYo/
 ### Запуск контейнера
     docker-compose up -d
     
-Поключаться на localhost:8000
+### Использование
+Сервис работает на localhost:8000 
+
+Документация swagger: localhost:8000/docs
