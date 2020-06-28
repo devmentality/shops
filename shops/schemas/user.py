@@ -7,6 +7,10 @@ class UserBaseSchema(BaseModel):
     last_name: str
 
 
+class UserCreateSchema(UserBaseSchema):
+    password: str
+
+
 class UserInfoSchema(UserBaseSchema):
     id: str
 
