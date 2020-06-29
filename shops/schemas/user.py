@@ -1,4 +1,5 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel
+from shops.schemas.base import OrmBaseSchema
 
 
 class UserBaseSchema(BaseModel):
@@ -11,12 +12,5 @@ class UserCreateSchema(UserBaseSchema):
     password: str
 
 
-class UserInfoSchema(UserBaseSchema):
-    id: str
-
-    @validator('id', pre=True)
-    def id_to_str(cls, value):
-        return str(value)
-
-    class Config:
-        orm_mode = True
+class UserInfoSchema(UserBaseSchema, OrmBaseSchema):
+    pass
