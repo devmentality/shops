@@ -1,4 +1,4 @@
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, validator, constr
 
 
 class OrmBaseSchema(BaseModel):
@@ -10,3 +10,6 @@ class OrmBaseSchema(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+NonEmptyStr = constr(strip_whitespace=True, min_length=1)

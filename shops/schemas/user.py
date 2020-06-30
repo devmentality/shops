@@ -1,15 +1,15 @@
-from pydantic import BaseModel
-from shops.schemas.base import OrmBaseSchema
+from pydantic import BaseModel, EmailStr
+from shops.schemas.base import OrmBaseSchema, NonEmptyStr
 
 
 class UserBaseSchema(BaseModel):
-    email: str
-    first_name: str
-    last_name: str
+    email: EmailStr
+    first_name: NonEmptyStr
+    last_name: NonEmptyStr
 
 
 class UserCreateSchema(UserBaseSchema):
-    password: str
+    password: NonEmptyStr
 
 
 class UserInfoSchema(UserBaseSchema, OrmBaseSchema):

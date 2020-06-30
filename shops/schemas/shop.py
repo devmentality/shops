@@ -1,9 +1,9 @@
 from pydantic import BaseModel
-from shops.schemas.base import OrmBaseSchema
+from shops.schemas.base import OrmBaseSchema, NonEmptyStr
 
 
 class ShopBaseSchema(BaseModel):
-    name: str
+    name: NonEmptyStr
 
 
 class ShopInfoSchema(ShopBaseSchema, OrmBaseSchema):

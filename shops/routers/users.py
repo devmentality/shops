@@ -9,7 +9,7 @@ router = APIRouter()
 
 @router.post('/users', status_code=HTTPStatus.CREATED, response_model=UserInfoSchema)
 def create_user(user_schema: UserCreateSchema):
-    user_exists = User.objects(email=user_schema.email).exists()
+    user_exists = User.objects(email=user_schema.email).first() is not None
     if user_exists:
         raise HTTPException(
             status_code=HTTPStatus.CONFLICT,
